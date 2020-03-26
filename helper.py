@@ -65,23 +65,8 @@ def get_summary_from_trans(trans):
 	tt = len(trans)
 	date = datetime.now().strftime("%Y/%m/%d")
 
-	print "*" * 20
-	print "%s" % date
-	print "Total: %d " % tt
-	print "Call: %d (%.2f)" % (call_c, float(call_c)/tt)
-	print "Put: %d (%.2f)" % (put_c, float(put_c)/tt)
-	print "*" * 20
-
 	cc = round(float(call_c)/tt, 2)
 	pc = round(float(put_c)/tt, 2)
-
-	# trans.sort(key=helper.sort, reverse = True)
-	# i = 0
-	# for t in trans:
-	# 	print t
-	# 	i += 1
-	# 	if i == 10:
-	# 		break
 
 	return {
 		'date' : date,
@@ -89,5 +74,7 @@ def get_summary_from_trans(trans):
 		'call' : call_c,
 		'put' : put_c,
 		'call_ratio' : cc,
-		'put_ratio' : pc
+		'put_ratio' : pc,
+		'call_ratio_skip_same_day_close' : call_ratio_skip,
+		'put_ratio_skip_same_day_close' : put_ratio_skip
 	}

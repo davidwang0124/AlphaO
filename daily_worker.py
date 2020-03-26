@@ -1,12 +1,13 @@
 import json
 import helper
+import index
+
 import setting
 from datetime import datetime
 
 def add_new_data():
-	#data = "data/trans/spx_03_20_2020.txt"
 	date = datetime.now().strftime("%m_%d_%Y")
-	data = "data/raw/spx_%s.txt" % date
+	data = "data/transcations/raw/spx_%s.txt" % date
 
 	a = {}
 	with open(setting.TOTAL_STATS) as f:
@@ -38,15 +39,18 @@ def today():
 	data = "data/transcations/raw/spx_%s.txt" % date
 	trans = helper.get_transaction_data(data)
 
-	# for t in trans:
-	# 	print json.dumps(t, indent=4)
-	# 	raise
+	news = []
+	for t in trans:
+		if "25 MAR" in t['t_time']:
+			continue
+		news.append(t)
 
-	# print helper.get_summary_from_trans(trans)
+	res = index.get_index_from_daily_transactions(news)
+	print json.dumps(res, indent=4)
 
 ######################################
 #add_new_data()
-show_all()
-#today()
+#show_all()
+today()
 
 
