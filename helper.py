@@ -75,6 +75,6 @@ def get_summary_from_trans(trans):
 		'put' : put_c,
 		'call_ratio' : cc,
 		'put_ratio' : pc,
-		'call_ratio_skip_same_day_close' : call_ratio_skip,
-		'put_ratio_skip_same_day_close' : put_ratio_skip
+		#'call_ratio_skip_same_day_close' : call_ratio_skip,
+		#'put_ratio_skip_same_day_close' : put_ratio_skip
 	}

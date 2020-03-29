@@ -9,6 +9,7 @@
 # 	"stock_price" : value,
 # 	"transaction_price" : price * quant
 # }
+from datetime import datetime
 
 def get_index_from_daily_transactions(trans):
 	call_c = 0
@@ -37,6 +38,4 @@ def get_index_from_daily_transactions(trans):
 		'put' : put_c,
 		'call_ratio' : cc,
 		'put_ratio' : pc,
-		'call_ratio_skip_same_day_close' : call_ratio_skip,
-		'put_ratio_skip_same_day_close' : put_ratio_skip
 	}

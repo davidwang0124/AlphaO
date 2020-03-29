@@ -41,7 +41,7 @@ def today():
 
 	news = []
 	for t in trans:
-		if "25 MAR" in t['t_time']:
+		if "27 MAR" in t['t_time']:
 			continue
 		news.append(t)
 
