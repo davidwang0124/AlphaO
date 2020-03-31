@@ -49,8 +49,8 @@ def today():
 	print json.dumps(res, indent=4)
 
 ######################################
-#add_new_data()
+add_new_data()
 #show_all()
-today()
+# today()
 
 
